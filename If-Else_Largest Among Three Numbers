@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+
+    int num1,num2,num3,d;
+    
+    scanf("%d", &num1);
+
+    
+    scanf("%d", &num2);
+    
+    
+    scanf("%d", &num3);
+    
+    if(num1>num2){
+        
+            
+            d=num1;
+        
+    }
+    
+    if(num2>num1){
+        
+        
+        
+        d=num2;
+        
+        
+    }
+     if(num3>d){
+        
+            
+            d=num3;
+        
+    }
+        printf("The largest number is : %d", d);
+    
+    
+    return 0;
+}
