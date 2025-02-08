@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main()
+{
+    float salary;
+    float intrest;
+    float taxdeduction;
+    float taxdeduction1;
+    float taxdeduction2;
+    float taxsum;
+    
+    scanf("%f", &salary);
+    
+    if(salary<=250000 && salary>=0){
+        intrest=0;
+        taxdeduction=salary*intrest;
+        printf("%.2f", taxdeduction);
+    }
+    else if(salary<=500000 && salary>250000){
+        intrest=5;
+        taxdeduction=(salary-250000)*intrest/100;
+         printf("%.2f", taxdeduction);
+    }
+    else if(salary>500000 && salary<=1000000){
+        intrest=5;
+        taxdeduction=250000*intrest/100;
+        intrest=20;
+        taxdeduction1=(salary-500000)*intrest/100;
+        taxsum=taxdeduction1+taxdeduction;
+        printf("%.2f", taxsum);
+    }
+    else if(salary>1000000){
+        intrest=5;
+        taxdeduction=250000*intrest/100;
+        intrest=20;
+        taxdeduction1=(500000)*intrest/100;
+        intrest=30;
+        taxdeduction2=(salary-1000000)*intrest/100;
+        taxsum=taxdeduction2+taxdeduction1+taxdeduction;
+        printf("%.2f", taxsum);
+    }
+    else{
+        printf("INVALID");
+    }
+    
+    return 0;
+}
