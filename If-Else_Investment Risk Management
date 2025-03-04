@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main()
+{
+    int age, Annual_income, Risk;
+    int age_invalid = 0;
+    int income_invalid = 0;
+    int risk_invalid = 0;
+    
+    scanf("%d %d %d", &age, &Annual_income, &Risk);
+    
+    if(age <= 0 || age >= 100) {
+        printf("Age is Invalid\n");
+       
+    }
+    
+    if(Annual_income <= 0 || Annual_income >= 1000000) {
+        printf("Income is Invalid\n");
+   
+    }
+    
+    if(Risk <= 0 || Risk >= 4) {
+        printf("Risk is Invalid\n");
+      
+    }
+    
+   
+    
+        if((age < 30) || 
+           (age >= 30 && age <= 50 && Annual_income > 75000 && Risk == 3) || 
+           (age > 50 && Annual_income > 75000 && Risk == 3)) {
+            printf("High Risk Portfolio: Suitable for aggressive investors with high-risk tolerance.\n");
+        }
+        else if((age > 50 || (Annual_income > 75000 && Risk == 3)) || 
+                (Annual_income <= 30000 && (Risk == 1 || Risk == 2))) {
+            printf("Low Risk Portfolio: Suitable for conservative investments.\n");
+        }
+        else if((age >= 30 && age <= 50 && Annual_income <= 75000 && Risk == 2) || 
+                (age >= 30 && age <= 50 && Annual_income >= 75000 && (Risk == 1 || Risk == 2))) {
+            printf("Medium Risk Portfolio: Balanced risk for moderate returns.\n");
+        }
+    
+    
+    return 0;
+}
