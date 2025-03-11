@@ -1,0 +1,83 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, c, d;
+  int n;
+  scanf("%d", &n);
+    int angle1, angle2, angle3, angle4;
+    
+    if(n==3){       //triangle
+        scanf("%d %d %d", &a, &b, &c);
+        scanf("%d %d %d", &angle1, &angle2, &angle3);
+          
+        if(a<=0 || b<=0 || c<=0){
+            printf("Invalid Figure");
+          }
+        else if(angle1<=0 || angle2<=0 || angle3<=0){
+            printf("Invalid Figure");
+          }
+          
+        else if ((a + b > c && a + c > b && b + c > a) && (angle1 + angle2 + angle3 == 180)) {  
+            
+              if ((a == b) && (b == c) && (angle1 == 60) && (angle2 == 60) && (angle3 == 60)) {
+                printf("Equilateral Triangle");
+              }           //equilateral is perfect
+            
+              else if ((a == b && (a != c) && (angle1 == angle2) && (angle1 != angle3)) || ((b==c) && (b!=a) && (angle2==angle3) && (angle2!=angle1)) || (c==a && (c!=b) && (angle3==angle1) && (angle3!=angle2))) {
+                printf("Isosceles Triangle");
+              }
+                          //perfect
+              else if(a != b && (b != c) && (c != a) && (angle1 != angle2) && (angle2 != angle3) && (angle3 != angle1)){
+                printf("Scalene Triangle");
+              }
+              else{
+                    printf("Invalid Figure");
+              }
+                          //perfect
+        } 
+        else{
+                    printf("Invalid Figure");
+        }
+    }                 //end of triangle
+    
+    else if(n==4){    //4 sides things
+          scanf("%d %d %d %d", &a, &b, &c, &d);
+          scanf("%d %d %d %d", &angle1, &angle2, &angle3, &angle4);
+          
+        if(a<=0 || b<=0 || c<=0 || d<=0 || angle1<=0 || angle2<=0 || angle3<=0 || angle4<=0){
+            printf("Invalid Figure");
+        }
+          
+        else if (angle1+angle2+angle3+angle4==360 ) { // All sides equal
+                  if ((a == b) && (b == c) && (c == d) && angle1 == 90 && angle2 == 90 && angle3 == 90 && angle4 == 90) {
+                        printf("Square");
+                    }
+                  else if(a==b && (b==c) && (c==d) && (a==d) && (angle1!=90) && (angle2!=90) && (angle3!=90) && (angle4!=90) && (angle1== angle3) && (angle4 == angle2)){
+                        printf("Rhombus");
+                    }
+                  else if (a == c && (b == d) && (angle1 == 90) && (angle2 == 90) && (angle3 == 90) && (angle4 == 90) ){ // Opposite sides equal
+                        printf("Rectangle");
+                    }
+                  else if(a==c && b==d && angle1==angle3 && angle2==angle4 && angle1!=90 && angle2!=90 && angle3!=90 && angle4!=90){
+                        printf("Parallelogram");
+                    }
+                  else{
+                        printf("Invalid Figure");
+                    }
+            }
+        else{
+                    printf("Invalid Figure");
+                }
+    
+    }   //end of things bro
+  
+    else if(n==0){
+    printf("Circle");
+    }
+    
+    else{
+        printf("Invalid Figure");
+    }
+    
+    return 0;
+}
