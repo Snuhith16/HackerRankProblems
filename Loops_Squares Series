@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int N, count = 0;
+    scanf("%d", &N);
+
+    for (int i = 1; count < N; i++) {
+        int square = i * i;
+        if (square % 3 != 0) {
+            printf("%d ", square);
+            count++;
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
