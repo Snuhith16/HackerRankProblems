@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int n, even=0, odd=0;
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        int num;
+        scanf("%d", &num);
+        if (num % 2 == 0){
+            even++;// we can know the details even 
+        } 
+      else{
+            odd++; //we can know the details of odd 
+        }
+    }
+
+    printf("%d %d\n", even, odd); //done of the code
+    return 0;
+}
